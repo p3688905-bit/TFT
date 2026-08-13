@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>桐城三祖：方苞、劉大櫆、姚鼐｜互動學習網頁</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc/900.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/lxgw-wenkai-tc/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/lxgw-wenkai-tc/700.css">
+<style>
+:root{
+  --paper:#f3ecdd; --paper2:#ece1c9; --card:#fbf7ec;
+  --ink:#26221b; --ink2:#5d5546; --line:#d9cbae;
+  --red:#a63a2b; --red2:#87291d; --gold:#a8864f; --blue:#31506b; --green:#5a6b52;
+  --shadow:0 10px 30px rgba(60,45,20,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Serif TC',serif; color:var(--ink); background:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.26 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  line-height:1.85;
+}
+.kai{font-family:'LXGW WenKai TC','Noto Serif TC',serif}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(243,236,221,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 22px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.05rem;letter-spacing:.12em}
+.seal{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:#fff;font-weight:900;border-radius:4px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55), inset 0 0 0 4px var(--red);line-height:1}
+.nav-logo .seal{width:34px;height:34px;font-size:.8rem;writing-mode:vertical-rl;letter-spacing:.15em;padding:3px}
+.nav-links{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--ink2);font-size:.9rem;padding:6px 12px;border-radius:999px;transition:.25s;letter-spacing:.08em}
+.nav-links a:hover{background:rgba(166,58,43,.1);color:var(--red)}
+.nav-links a.active{background:var(--red);color:#fff}
+/* ---------- hero ---------- */
+header.hero{position:relative;min-height:94vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://image.qwenlm.ai/public_source/ffdfd0e1-c718-43e6-bbca-b79761ce3d00/10d45427d-9dd4-4a61-889e-c04be23f03c1.png') center/cover no-repeat;filter:saturate(.9)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,236,221,.55) 0%,rgba(243,236,221,.15) 40%,rgba(243,236,221,.9) 100%)}
+.hero-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:130px 26px 70px;width:100%;display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.hero-txt{flex:1 1 480px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-weight:700;letter-spacing:.35em;font-size:.85rem;margin-bottom:14px}
+.hero-kicker::before{content:'';width:42px;height:2px;background:var(--red)}
+h1{font-size:clamp(2.6rem,6vw,4.3rem);font-weight:900;letter-spacing:.08em;line-height:1.25}
+h1 small{display:block;font-size:.38em;font-weight:600;color:var(--ink2);letter-spacing:.3em;margin-top:10px}
+.hero-quote{margin:26px 0 30px;padding:16px 22px;border-left:4px solid var(--red);background:rgba(251,247,236,.8);max-width:560px;font-size:1.02rem;color:var(--ink2)}
+.hero-quote b{color:var(--red)}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{border:none;border-radius:6px;padding:12px 26px;font-size:.95rem;letter-spacing:.15em;transition:.25s;text-decoration:none;display:inline-block}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 6px 18px rgba(166,58,43,.35)}
+.btn-red:hover{background:var(--red2);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink2)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.hero-seal{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero-seal .seal{width:92px;height:92px;writing-mode:vertical-rl;font-size:1.5rem;letter-spacing:.2em;padding:8px;transform:rotate(-3deg)}
+.hero-vert{writing-mode:vertical-rl;font-size:1.25rem;letter-spacing:.4em;color:var(--ink2);border-left:1px dashed var(--ink2);padding-left:14px;height:230px}
+/* ---------- sections ---------- */
+section{padding:86px 26px;max-width:1180px;margin:0 auto}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.sec-head .seal{width:46px;height:46px;font-size:1.15rem;writing-mode:vertical-rl;padding:5px;flex:0 0 auto}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:900;letter-spacing:.14em}
+.sec-sub{color:var(--ink2);margin-bottom:44px;max-width:760px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent);max-width:1180px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.on{opacity:1;transform:none}
+/* ---------- overview ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:40px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px 20px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:.3s}
+.stat:hover{transform:translateY(-6px)}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--red)}
+.stat .num{font-size:2.4rem;font-weight:900;color:var(--red)}
+.stat .lab{letter-spacing:.2em;color:var(--ink2);font-size:.9rem;margin-top:4px}
+.stat .desc{font-size:.82rem;color:var(--ink2);margin-top:8px}
+.origin{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:stretch}
+@media(max-width:860px){.origin{grid-template-columns:1fr}}
+.origin-quote{background:var(--ink);color:#efe6d2;border-radius:10px;padding:34px 30px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.origin-quote::after{content:'桐城';position:absolute;right:-14px;bottom:-26px;writing-mode:vertical-rl;font-size:6rem;font-weight:900;opacity:.08}
+.origin-quote .q{font-size:1.35rem;line-height:2;letter-spacing:.06em}
+.origin-quote .src{margin-top:18px;color:var(--gold);font-size:.9rem;letter-spacing:.1em}
+.lineage{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px;box-shadow:var(--shadow)}
+.lineage h3{letter-spacing:.2em;margin-bottom:20px;font-size:1.05rem}
+.lg-row{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+.lg-node{flex:1 1 140px;border:2px solid var(--line);border-radius:10px;padding:16px 12px;text-align:center;transition:.3s;background:#fff}
+.lg-node:hover{border-color:var(--red);transform:translateY(-4px)}
+.lg-node .role{font-size:.75rem;letter-spacing:.2em;color:var(--red);border:1px solid var(--red);border-radius:999px;padding:2px 10px;display:inline-block;margin-bottom:8px}
+.lg-node .nm{font-size:1.3rem;font-weight:900}
+.lg-node .ds{font-size:.8rem;color:var(--ink2);margin-top:6px}
+.lg-arrow{align-self:center;font-size:1.4rem;color:var(--gold)}
+@media(max-width:640px){.lg-arrow{transform:rotate(90deg);width:100%;text-align:center}}
+.branch{margin-top:22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--ink2);font-size:.92rem}
+.chip{display:inline-block;background:var(--paper2);border:1px solid var(--line);border-radius:999px;padding:4px 16px;font-size:.85rem;letter-spacing:.1em}
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:'';position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--red),var(--gold))}
+.tl-item{position:relative;margin-bottom:34px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 26px;box-shadow:var(--shadow);transition:.3s}
+.tl-item:hover{transform:translateX(8px)}
+.tl-item::before{content:'';position:absolute;left:-30px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px var(--paper),0 0 0 5px var(--red)}
+.tl-item .era{font-weight:900;font-size:1.15rem;letter-spacing:.12em}
+.tl-item .era span{color:var(--red)}
+.tl-item .when{font-size:.8rem;color:var(--gold);letter-spacing:.15em;margin-left:10px}
+.tl-item p{color:var(--ink2);font-size:.95rem;margin-top:6px}
+/* ---------- masters ---------- */
+.mtabs{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.mtab{flex:1 1 220px;display:flex;align-items:center;gap:14px;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:12px 16px;transition:.3s}
+.mtab img{width:62px;height:62px;object-fit:cover;object-position:top;border-radius:8px;border:1px solid var(--line)}
+.mtab .t{text-align:left}
+.mtab .nm{font-weight:900;font-size:1.15rem;letter-spacing:.1em}
+.mtab .yr{font-size:.78rem;color:var(--ink2)}
+.mtab:hover{transform:translateY(-4px);border-color:var(--gold)}
+.mtab.active{border-color:var(--red);background:#fff;box-shadow:var(--shadow)}
+.mtab.active .nm{color:var(--red)}
+.mpanel{display:none;grid-template-columns:340px 1fr;gap:36px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:36px;box-shadow:var(--shadow);animation:fadeUp .5s ease}
+.mpanel.active{display:grid}
+@media(max-width:900px){.mpanel{grid-template-columns:1fr}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.portrait{position:relative}
+.portrait .frame{border:10px solid #fff;outline:1px solid var(--line);box-shadow:var(--shadow);border-radius:6px;overflow:hidden}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.portrait .nameplate{position:absolute;top:16px;right:-8px;writing-mode:vertical-rl;background:var(--red);color:#fff;padding:14px 8px;letter-spacing:.3em;font-weight:700;border-radius:4px;box-shadow:var(--shadow)}
+.minfo h3{font-size:1.7rem;font-weight:900;letter-spacing:.1em}
+.minfo .alias{color:var(--ink2);font-size:.9rem;margin:6px 0 18px}
+.minfo h4{letter-spacing:.2em;color:var(--red);margin:20px 0 10px;font-size:1rem;display:flex;align-items:center;gap:8px}
+.minfo h4::after{content:'';flex:1;height:1px;background:var(--line)}
+.bio{list-style:none}
+.bio li{padding:7px 0 7px 22px;position:relative;font-size:.94rem;border-bottom:1px dashed var(--line)}
+.bio li::before{content:'◆';position:absolute;left:2px;top:9px;font-size:.6rem;color:var(--gold)}
+.theory-box{background:var(--paper2);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:16px 20px;font-size:.95rem}
+.theory-box .kai{color:var(--red2)}
+/* ---------- theory ---------- */
+.th-block{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:36px;margin-bottom:36px;box-shadow:var(--shadow)}
+.th-title{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.th-title .who{font-size:1.3rem;font-weight:900;letter-spacing:.12em}
+.th-title .what{color:var(--red);font-weight:700;letter-spacing:.2em}
+.th-note{color:var(--ink2);font-size:.92rem;margin-bottom:26px}
+.weave-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:22px}
+@media(max-width:760px){.weave-wrap{grid-template-columns:1fr}}
+.exp-card{border:2px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;transition:.3s;text-align:left}
+.exp-card:hover{border-color:var(--gold)}
+.exp-card .hd{padding:18px 22px;display:flex;align-items:center;gap:14px}
+.exp-card .big{font-size:1.7rem;font-weight:900;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.exp-card.yi .big{background:rgba(166,58,43,.12);color:var(--red)}
+.exp-card.fa .big{background:rgba(168,134,79,.15);color:var(--gold)}
+.exp-card .tt{font-weight:700;letter-spacing:.1em}
+.exp-card .st{font-size:.8rem;color:var(--ink2)}
+.exp-card .hd .plus{margin-left:auto;font-size:1.2rem;color:var(--gold);transition:.3s}
+.exp-card.open .plus{transform:rotate(45deg)}
+.exp-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.exp-card.open .exp-body{max-height:320px}
+.exp-body .in{padding:0 22px 20px;font-size:.92rem;color:var(--ink2);border-top:1px dashed var(--line)}
+.exp-body .quote{margin-top:10px;color:var(--red2)}
+.weave-visual{position:relative;border-radius:10px;overflow:hidden;height:130px;display:flex;align-items:center;justify-content:center;
+ background:
+ repeating-linear-gradient(90deg,rgba(166,58,43,.35) 0 3px,transparent 3px 26px),
+ repeating-linear-gradient(0deg,rgba(168,134,79,.4) 0 3px,transparent 3px 22px),#fffdf6;
+ border:1px solid var(--line)}
+.weave-visual span{background:rgba(255,253,246,.92);padding:8px 22px;font-weight:900;letter-spacing:.2em;border:1px solid var(--line);border-radius:6px}
+.ladder{display:flex;flex-direction:column;gap:12px;max-width:760px}
+.lad-btn{border:2px solid var(--line);border-radius:10px;background:#fff;padding:16px 22px;display:flex;align-items:center;gap:16px;transition:.3s;text-align:left}
+.lad-btn .lv{font-size:.72rem;letter-spacing:.15em;border-radius:999px;padding:3px 12px;flex:0 0 auto}
+.lad-btn[data-l="shen"] .lv{background:rgba(166,58,43,.12);color:var(--red)}
+.lad-btn[data-l="yin"] .lv{background:rgba(168,134,79,.16);color:#8a6c3c}
+.lad-btn[data-l="zi"] .lv{background:rgba(49,80,107,.12);color:var(--blue)}
+.lad-btn .nm{font-weight:900;font-size:1.15rem;letter-spacing:.15em}
+.lad-btn .hint{font-size:.8rem;color:var(--ink2);margin-left:auto}
+.lad-btn.active{border-color:var(--red);box-shadow:var(--shadow);transform:translateX(8px)}
+.lad-detail{display:none;background:var(--paper2);border-radius:10px;padding:18px 22px;margin-top:4px;font-size:.93rem;color:var(--ink2);animation:fadeUp .4s}
+.lad-detail.show{display:block}
+.lad-detail .kai{color:var(--red2);display:block;margin-bottom:6px}
+.twelve{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.tw{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 18px;font-size:.9rem;letter-spacing:.1em;transition:.25s}
+.tw:hover{border-color:var(--gold)}
+.tw.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#twelveNote{margin-top:14px;min-height:28px;color:var(--red2);font-size:.93rem}
+.tri{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:26px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px}
+@media(max-width:640px){.duo{grid-template-columns:1fr}}
+.yang,.yin{border-radius:10px;padding:22px;text-align:center;transition:.3s;cursor:default}
+.yang{background:linear-gradient(160deg,#8c2f22,#b3543f);color:#fff}
+.yin{background:linear-gradient(160deg,#31506b,#5d7f9c);color:#fff}
+.yang:hover,.yin:hover{transform:scale(1.03)}
+.yang .g,.yin .g{font-size:1.6rem;font-weight:900;letter-spacing:.3em}
+.yang p,.yin p{font-size:.82rem;opacity:.9;margin-top:8px}
+.eight{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:14px}
+.flip{perspective:900px;height:130px;cursor:pointer}
+.flip-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s}
+.flip.flipped .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line)}
+.face.f{background:#fff}
+.face.f .ch{font-size:2rem;font-weight:900}
+.face.f .tag{font-size:.7rem;letter-spacing:.2em;color:var(--ink2)}
+.face.b{transform:rotateY(180deg);color:#fff;font-size:.8rem;padding:10px;text-align:center;letter-spacing:.05em}
+.face.b.jing{background:var(--red)}
+.face.b.cu{background:var(--gold)}
+.flip-hint{font-size:.8rem;color:var(--ink2);margin-top:10px}
+/* ---------- texts ---------- */
+.ttabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ttab{border:2px solid var(--line);background:var(--card);border-radius:999px;padding:9px 24px;letter-spacing:.12em;font-size:.92rem;transition:.25s}
+.ttab:hover{border-color:var(--gold)}
+.ttab.active{background:var(--red);border-color:var(--red);color:#fff}
+.tpanel{display:none;animation:fadeUp .5s}
+.tpanel.active{display:block}
+.t-tools{display:flex;gap:12px;align-items:center;margin-bottom:20px;flex-wrap:wrap}
+.switch{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;color:var(--ink2);cursor:pointer;user-select:none}
+.switch .tr{width:46px;height:24px;border-radius:999px;background:var(--line);position:relative;transition:.3s}
+.switch .tr::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.3s;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.switch.on .tr{background:var(--red)}
+.switch.on .tr::after{left:25px}
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:860px){.duo-grid{grid-template-columns:1fr}}
+.duo-grid.no-trans{grid-template-columns:1fr}
+.col-h{letter-spacing:.25em;font-size:.85rem;color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:6px;margin-bottom:14px}
+.orig p{font-size:1.02rem;line-height:2.1;margin-bottom:14px}
+.trans p{font-size:.92rem;line-height:2;color:var(--ink2);margin-bottom:14px;background:rgba(255,255,255,.55);border-radius:8px;padding:10px 14px}
+.hide-trans .trans{display:none}
+.acc{border:1px solid var(--line);border-radius:10px;background:var(--card);margin-top:26px;overflow:hidden}
+.acc-head{width:100%;background:none;border:none;padding:16px 22px;display:flex;align-items:center;gap:10px;font-size:1rem;letter-spacing:.15em;font-weight:700;color:var(--red)}
+.acc-head .ar{margin-left:auto;transition:.3s}
+.acc.open .acc-head .ar{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .5s}
+.acc.open .acc-body{max-height:1400px}
+.acc-body .in{padding:0 22px 22px;font-size:.93rem;color:var(--ink2)}
+.acc-body ul{padding-left:20px}
+/* ---------- games ---------- */
+.game-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:30px}
+@media(max-width:860px){.game-grid{grid-template-columns:1fr}}
+.match-persons{display:flex;flex-direction:column;gap:14px}
+.mp{border:2px solid var(--line);border-radius:10px;background:#fff;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:.25s}
+.mp .dot{width:14px;height:14px;border-radius:50%;flex:0 0 auto}
+.mp[data-p="fang"] .dot{background:var(--red)}
+.mp[data-p="liu"] .dot{background:var(--gold)}
+.mp[data-p="yao"] .dot{background:var(--blue)}
+.mp .nm{font-weight:900;letter-spacing:.15em}
+.mp .cnt{margin-left:auto;font-size:.8rem;color:var(--ink2)}
+.mp.sel{border-color:var(--ink);box-shadow:var(--shadow);transform:translateX(6px)}
+.mp.done{opacity:.55}
+.match-terms{display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start}
+.mt{border:2px solid var(--line);border-radius:999px;background:#fff;padding:10px 22px;font-size:.95rem;letter-spacing:.1em;transition:.25s}
+.mt:hover{border-color:var(--gold);transform:translateY(-2px)}
+.mt.m-fang{background:var(--red);border-color:var(--red);color:#fff;pointer-events:none}
+.mt.m-liu{background:var(--gold);border-color:var(--gold);color:#fff;pointer-events:none}
+.mt.m-yao{background:var(--blue);border-color:var(--blue);color:#fff;pointer-events:none}
+.mt.shake{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.game-status{margin-top:20px;font-size:.92rem;color:var(--ink2)}
+.game-status b{color:var(--red)}
+/* quiz */
+.quiz-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:36px;box-shadow:var(--shadow);max-width:820px;margin:0 auto}
+.q-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;font-size:.88rem;color:var(--ink2);letter-spacing:.1em}
+.q-bar{height:6px;background:var(--paper2);border-radius:999px;overflow:hidden;margin-bottom:26px}
+.q-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--gold));width:0;transition:width .4s}
+.q-text{font-size:1.15rem;font-weight:700;margin-bottom:22px;line-height:1.9}
+.q-opts{display:flex;flex-direction:column;gap:12px}
+.q-opt{border:2px solid var(--line);background:#fff;border-radius:10px;padding:13px 20px;text-align:left;font-size:.98rem;transition:.25s;display:flex;gap:12px;align-items:center}
+.q-opt .k{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex:0 0 auto}
+.q-opt:hover:not(:disabled){border-color:var(--gold);transform:translateX(4px)}
+.q-opt.correct{border-color:#3c7a3f;background:rgba(60,122,63,.1)}
+.q-opt.correct .k{background:#3c7a3f;border-color:#3c7a3f;color:#fff}
+.q-opt.wrong{border-color:var(--red);background:rgba(166,58,43,.08)}
+.q-opt.wrong .k{background:var(--red);border-color:var(--red);color:#fff}
+.q-opt:disabled{cursor:default;opacity:.85}
+.q-exp{display:none;margin-top:20px;background:var(--paper2);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;font-size:.92rem;color:var(--ink2)}
+.q-exp.show{display:block;animation:fadeUp .4s}
+.q-next{margin-top:22px;display:none}
+.q-next.show{display:inline-block}
+.q-result{text-align:center;padding:20px 0}
+.q-result .score{font-size:4rem;font-weight:900;color:var(--red)}
+.q-result .msg{color:var(--ink2);margin:10px 0 26px}
+/* footer */
+footer{background:var(--ink);color:#cfc4ad;padding:50px 26px;text-align:center;font-size:.88rem;letter-spacing:.1em}
+footer .seal{width:44px;height:44px;writing-mode:vertical-rl;font-size:.95rem;padding:5px;margin:0 auto 16px}
+#toTop{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;border:none;background:var(--red);color:#fff;font-size:1.1rem;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.3s;z-index:99}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--red2)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="nav-logo"><span class="seal">桐城</span>桐城三祖・互動學習</div>
+    <div class="nav-links">
+      <a href="#overview">總覽</a><a href="#timeline">發展</a><a href="#masters">三祖</a>
+      <a href="#theory">理論</a><a href="#texts">選讀</a><a href="#game">配對</a><a href="#quiz">測驗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-in">
+    <div class="hero-txt">
+      <div class="hero-kicker">清代最大散文流派</div>
+      <h1>桐城三祖<small>方苞・劉大櫆・姚鼐</small></h1>
+      <div class="hero-quote kai">「昔有方侍郎，今有劉先生，<b>天下文章，其出於桐城乎？</b>」<br>—— 程晉芳、周永年戲謂姚鼐之語，「桐城派」之名由此而來。</div>
+      <div class="hero-btns">
+        <a class="btn btn-red" href="#masters">認識三祖</a>
+        <a class="btn btn-ghost" href="#quiz">挑戰測驗</a>
+      </div>
+    </div>
+    <div class="hero-seal">
+      <span class="seal">桐城文脈</span>
+      <div class="hero-vert kai">義以為經・法緯之</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 總覽 ============ -->
+<section id="overview">
+  <div class="sec-head reveal"><span class="seal">壹</span><h2>流派總覽</h2></div>
+  <p class="sec-sub reveal">桐城派崛起於康熙、衰亡於民國，綿延兩百多年，是清代文壇上最大的散文流派。主要代表人物戴名世、方苞、劉大櫆、姚皆為安徽桐城人，其中「方苞、劉大櫆、姚」被尊為「桐城三祖」。</p>
+  <div class="stats">
+    <div class="stat reveal"><div class="num">200<span style="font-size:.5em">＋</span></div><div class="lab">綿延年份</div><div class="desc">崛起於康熙，衰亡於民國</div></div>
+    <div class="stat reveal"><div class="num">1200<span style="font-size:.5em">＋</span></div><div class="lab">作家群體</div><div class="desc">人數之多、流衍之廣，絕無僅有</div></div>
+    <div class="stat reveal"><div class="num">2</div><div class="lab">主要分支</div><div class="desc">陽湖派、湘鄉派</div></div>
+    <div class="stat reveal"><div class="num">13</div><div class="lab">文類體裁</div><div class="desc">《古文辭類纂》分十三種文類</div></div>
+  </div>
+  <div class="origin">
+    <div class="origin-quote reveal">
+      <div class="q kai">「昔有方侍郎，今有劉先生，天下文章，其出於桐城乎？」</div>
+      <div class="src">—— 程晉芳、周永年戲謂姚鼐（姚〈劉海峰先生八十壽序〉）。從此學者輾轉傳述，號曰「桐城派」。</div>
+    </div>
+    <div class="lineage reveal">
+      <h3>桐城派架構</h3>
+      <div class="lg-row">
+        <div class="lg-node"><span class="role">創始人</span><div class="nm">方苞</div><div class="ds">導乎先路<br>首倡「義法」說</div></div>
+        <div class="lg-arrow">➤</div>
+        <div class="lg-node"><span class="role">承先啟後</span><div class="nm">劉大櫆</div><div class="ds">神氣說<br>《論文偶記》</div></div>
+        <div class="lg-arrow">➤</div>
+        <div class="lg-node"><span class="role">集大成</span><div class="nm">姚鼐</div><div class="ds">三二八訣<br>《古文辭類纂》</div></div>
+      </div>
+      <div class="branch">分支流派：<span class="chip">陽湖派</span><span class="chip">湘鄉派</span></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ============ 發展 ============ -->
+<section id="timeline">
+  <div class="sec-head reveal"><span class="seal">貳</span><h2>發展脈絡</h2></div>
+  <p class="sec-sub reveal">從康熙到民國，桐城派歷經創立、光大、興盛與衰落四個時期。滑動時間軸，回顧兩百年文脈流轉。</p>
+  <div class="tl">
+    <div class="tl-item reveal"><div class="era"><span>創立時期</span><span class="when">康熙年間</span></div><p>方苞導乎先路，首次提出「義法」說，奠定桐城派理論體系的基礎。</p></div>
+    <div class="tl-item reveal"><div class="era"><span>光大時期</span><span class="when">乾隆・嘉慶</span></div><p>姚鼐晚年主講鍾山書院，先後執教梅花、敬敷、紫陽、鐘山諸書院，培養大批學人弟子。</p></div>
+    <div class="tl-item reveal"><div class="era"><span>興盛時期</span><span class="when">咸豐・同治</span></div><p>曾國藩出，桐城派風靡一時，並別開「湘鄉派」；曾國荃亦欲將方苞從祀孔廟。</p></div>
+    <div class="tl-item reveal"><div class="era"><span>衰落時期</span><span class="when">民國肇建</span></div><p>民國肇建，新學興起，桐城之學漸趨衰落，兩百餘年的文脈自此式微。</p></div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ============ 三祖 ============ -->
+<section id="masters">
+  <div class="sec-head reveal"><span class="seal">參</span><h2>桐城三祖</h2></div>
+  <p class="sec-sub reveal">點擊人物卡片，查看三位宗師的生平事蹟與理論要點。畫像皆以清代傳統祖宗像／官服像風格繪製。</p>
+  <div class="mtabs reveal">
+    <button class="mtab active" data-m="fang"><img src="https://image.qwenlm.ai/public_source/ffdfd0e1-c718-43e6-bbca-b79761ce3d00/133ab7c7b-6099-443b-bb02-03c6f6d0b378.png" alt="方苞清代風格畫像"><span class="t"><span class="nm">方苞</span><br><span class="yr">1668－1749・創始人</span></span></button>
+    <button class="mtab" data-m="liu"><img src="https://image.qwenlm.ai/public_source/ffdfd0e1-c718-43e6-bbca-b79761ce3d00/1e0d6e002-e953-4400-bfa0-94c4ba8e6d8c.png" alt="劉大櫆清代風格畫像"><span class="t"><span class="nm">劉大櫆</span><br><span class="yr">1698－1779・承先啟後</span></span></button>
+    <button class="mtab" data-m="yao"><img src="https://image.qwenlm.ai/public_source/ffdfd0e1-c718-43e6-bbca-b79761ce3d00/14494b82b-727a-4d0c-a7b5-6aa23fa2733c.png" alt="姚鼐清代風格畫像"><span class="t"><span class="nm">姚鼐</span><br><span class="yr">1732－1815・集大成</span></span></button>
+  </div>
+
+  <div class="mpanel active" data-m="fang">
+    <div class="portrait"><div class="frame"><img src="https://image.qwenlm.ai/public_source/ffdfd0e1-c718-43e6-bbca-b79761ce3d00/133ab7c7b-6099-443b-bb02-03c6f6d0b378.png" alt="方苞清代風格畫像"></div><div class="nameplate kai">望溪先生</div></div>
+    <div class="minfo">
+      <h3>方苞</h3>
+      <div class="alias">字靈皋，一字鳳九，晚號望溪，安徽桐城縣人。</div>
+      <h4>生平大事</h4>
+      <ul class="bio">
+        <li>康熙三十年遊京師；康熙四十五年會試中式第四名，因母病回鄉，未參加殿試。</li>
+        <li>康熙五十年，戴名世《南山集》案發，因作序牽連入獄兩年，獄中著成《禮記析疑》《喪禮或問》，經李光地營救免難。</li>
+        <li>康熙五十二年，康熙以「方苞學問，天下莫不聞」，命其以白衣平民身分入值南書房。</li>
+        <li>咸豐十一年，曾國荃欲將方苞從祀孔廟。</li>
+      </ul>
+      <h4>文學理論・義法說</h4>
+      <div class="theory-box">「義」即《易》之所謂「言有物」，指思想內容；「法」即《易》之所謂「言有序」，指藝術形式。<span class="kai">「義以為經而法緯之，然後為成體之文。」</span>義法說是桐城派理論體系的基礎。</div>
+    </div>
+  </div>
+
+  <div class="mpanel" data-m="liu">
+    <div class="portrait"><div class="frame"><img src="https://image.qwenlm.ai/public_source/ffdfd0e1-c718-43e6-bbca-b79761ce3d00/1e0d6e002-e953-4400-bfa0-94c4ba8e6d8c.png" alt="劉大櫆清代風格畫像"></div><div class="nameplate kai">海峰先生</div></div>
+    <div class="minfo">
+      <h3>劉大櫆</h3>
+      <div class="alias">字才甫，一字耕南，號海峰，安徽省桐城縣人。</div>
+      <h4>生平大事</h4>
+      <ul class="bio">
+        <li>應鄉試兩中副榜，未中舉人；後應博學宏詞試，為張廷玉所黜，以教書為業，默抑以終。</li>
+        <li>是方苞的得意門生，也是姚鼐的老師，居承先啟後之位。</li>
+        <li>《清史稿》曰：「劉大櫆修幹美髯，能引拳入口，縱聲讀古詩文，聆其音節，皆神會理解。」</li>
+      </ul>
+      <h4>文學理論・神氣說</h4>
+      <div class="theory-box">〈論文偶記〉採語錄體，共三十二條，繼承方苞「義法說」。提出「行文之道，神為主，氣輔之」，由字句而音節、由音節而神氣，是對「言有序」的昇華；又論「十二貴」為創作要領。</div>
+    </div>
+  </div>
+
+  <div class="mpanel" data-m="yao">
+    <div class="portrait"><div class="frame"><img src="https://image.qwenlm.ai/public_source/ffdfd0e1-c718-43e6-bbca-b79761ce3d00/14494b82b-727a-4d0c-a7b5-6aa23fa2733c.png" alt="姚鼐清代風格畫像"></div><div class="nameplate kai">惜抱先生</div></div>
+    <div class="minfo">
+      <h3>姚鼐</h3>
+      <div class="alias">字姬傳，一字夢穀，齋號惜抱軒，世稱惜抱先生，安徽桐城人。</div>
+      <h4>生平大事</h4>
+      <ul class="bio">
+        <li>乾隆二十八年中進士，授庶吉士；乾隆三十八年入四庫全書館充纂修官，次年借病辭官。</li>
+        <li>歸里後以授徒為生，主講揚州梅花、安慶敬敷、歙縣紫陽、南京鐘山諸書院。</li>
+        <li>嘉慶十五年八十歲赴鹿鳴宴，耳聰目明，見者以為神仙中人；嘉慶二十年卒於鐘山書院，享年八十三。</li>
+      </ul>
+      <h4>文學理論・三二八訣</h4>
+      <div class="theory-box">義理、考據、辭章三者相濟；文章風格分陽剛、陰柔，并行不容偏廢；為文八要：神、理、氣、味、格、律、聲、色。編纂《古文辭類纂》，譽為「文章正宗」。</div>
+      <h4>《古文辭類纂》十三類</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="chip">論辯</span><span class="chip">序跋</span><span class="chip">奏議</span><span class="chip">書說</span><span class="chip">贈序</span><span class="chip">詔令</span><span class="chip">傳狀</span><span class="chip">碑誌</span><span class="chip">雜記</span><span class="chip">箴銘</span><span class="chip">頌讚</span><span class="chip">辭賦</span><span class="chip">哀祭</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ============ 理論 ============ -->
+<section id="theory">
+  <div class="sec-head reveal"><span class="seal">肆</span><h2>理論互動圖解</h2></div>
+  <p class="sec-sub reveal">點擊各區塊展開原文與解說，理解桐城文論由「義法」到「神氣」再到「三二八訣」的層層昇華。</p>
+
+  <div class="th-block reveal">
+    <div class="th-title"><span class="who">方苞</span><span class="what">「義法說」</span></div>
+    <p class="th-note">義為經、法為緯，如織布之經緯交錯，二者統一而成「成體之文」。點擊卡片查看詳情。</p>
+    <div class="weave-wrap">
+      <button class="exp-card yi" type="button">
+        <div class="hd"><span class="big">義</span><span><span class="tt">言有物・屬內容</span><br><span class="st">《易》曰：「言有物」</span></span><span class="plus">＋</span></div>
+        <div class="exp-body"><div class="in">「必貫穿經史，包羅古今，周察事情，明體達用，然後能質實而言有物。」貫徹經史義理、切於世務實用，達到「文以載道」之目的。<div class="quote kai">義以為經。</div></div></div>
+      </button>
+      <button class="exp-card fa" type="button">
+        <div class="hd"><span class="big">法</span><span><span class="tt">言有序・屬形式</span><br><span class="st">《易》曰：「言有序」</span></span><span class="plus">＋</span></div>
+        <div class="exp-body"><div class="in">「一篇之中，脈相灌輸，而不可增損。」講究選材取捨、章法布局、氣脈灌注、語言繁簡、風格雅俗等表達形式。<div class="quote kai">法緯之，然後為成體之文。</div></div></div>
+      </button>
+    </div>
+    <div class="weave-visual"><span class="kai">義以為經而法緯之</span></div>
+  </div>
+
+  <div class="th-block reveal">
+    <div class="th-title"><span class="who">劉大櫆</span><span class="what">「神氣說」・《論文偶記》</span></div>
+    <p class="th-note">由粗入精：字句 → 音節 → 神氣。點擊階梯查看原文。</p>
+    <div class="ladder">
+      <button class="lad-btn active" data-l="shen" type="button"><span class="lv">文之精</span><span class="nm">神氣</span><span class="hint">神為主，氣輔之 ▸</span></button>
+      <div class="lad-detail show" data-l="shen"><span class="kai">「行文之道，神為主，氣輔之。」「氣隨神轉，神渾則氣灝，神遠則氣逸，神偉則氣高，神便則氣奇，神深則氣靜，故神為氣之主。」</span>「神」指作者才性、氣質、修養涵融而成的主體精神；「氣」則是此精神在行文中自然的外顯與流瀉。這是對方苞「言有序」的昇華。</div>
+      <button class="lad-btn" data-l="yin" type="button"><span class="lv">稍粗</span><span class="nm">音節</span><span class="hint">神氣之迹 ▸</span></button>
+      <div class="lad-detail" data-l="yin"><span class="kai">「音節者，文之稍粗處也。」「音節者，神氣之迹也。」</span>重視詩文吟誦的節奏感，由音節可窺見神氣之流動。</div>
+      <button class="lad-btn" data-l="zi" type="button"><span class="lv">最粗</span><span class="nm">字句</span><span class="hint">音節之矩 ▸</span></button>
+      <div class="lad-detail" data-l="zi"><span class="kai">「字句者，文之最粗處也。然論文而至於字句，則文之能事盡矣。」「字句者，音節之矩也。」</span>自字句求音節，自音節求神氣，層層上達。</div>
+    </div>
+    <h4 style="letter-spacing:.2em;color:var(--red);margin:28px 0 12px">十二貴・論文學創作要領（點擊查看）</h4>
+    <div class="twelve" id="twelve"></div>
+    <div id="twelveNote" class="kai">點擊上方詞條，查看簡釋。</div>
+  </div>
+
+  <div class="th-block reveal">
+    <div class="th-title"><span class="who">姚鼐</span><span class="what">「三、二、八訣」</span></div>
+    <p class="th-note">「鼐嘗論學問之事，有三端焉：曰義理也，考證也，文章也。是三者苟善用之，則皆足以相濟。」（〈述庵文鈔序〉）</p>
+    <div class="tri">
+      <div class="stat"><div class="num" style="font-size:1.6rem">義理</div><div class="desc">思想義蘊・宋學之長</div></div>
+      <div class="stat"><div class="num" style="font-size:1.6rem;color:var(--gold)">考據</div><div class="desc">證據考訂・漢學之長</div></div>
+      <div class="stat"><div class="num" style="font-size:1.6rem;color:var(--blue)">辭章</div><div class="desc">文章表達・達意之具</div></div>
+    </div>
+    <div class="duo">
+      <div class="yang"><div class="g">陽剛</div><p>得乎陽剛之精，文章雄健壯美</p></div>
+      <div class="yin"><div class="g">陰柔</div><p>得乎陰柔之精，文章溫婉深美</p></div>
+    </div>
+    <p class="th-note">「陰陽剛柔，并行而不容偏廢。」——〈海愚詩抄序〉。下方八張卡片，點擊翻面：</p>
+    <div class="eight" id="eight"></div>
+    <div class="flip-hint">神、理、氣、味者，文之精也；格、律、聲、色者，文之粗也。然苟舍其粗，則精者亦胡以寓焉？</div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ============ 選讀 ============ -->
+<section id="texts">
+  <div class="sec-head reveal"><span class="seal">伍</span><h2>選讀文本</h2></div>
+  <p class="sec-sub reveal">三篇經典選文，可切換原文與白話譯文對照閱讀，並附文本解讀。</p>
+  <div class="ttabs reveal">
+    <button class="ttab active" data-t="t1">方苞〈又書貨殖傳後〉</button>
+    <button class="ttab" data-t="t2">劉大櫆〈遊萬柳堂記〉</button>
+    <button class="ttab" data-t="t3">姚鼐〈劉海峰先生八十壽序〉</button>
+  </div>
+
+  <div class="tpanel active" data-t="t1">
+    <div class="t-tools"><span class="switch" id="sw1"><span class="tr"></span>顯示白話對照</span><span style="font-size:.8rem;color:var(--ink2)">（本篇附文本解讀）</span></div>
+    <div class="duo-grid hide-trans no-trans" id="grid1">
+      <div class="orig"><div class="col-h">原文</div>
+        <p>《春秋》之制義法，自太史公發之，而後之深於文者亦具焉。義即《易》之所謂「言有物」也，法即《易》之所謂「言有序」也。義以為經而法緯之，然後為成體之文。</p>
+        <p>是篇兩舉天下地域之凡，而詳略異焉。其前獨舉地物，是衣食之源，古帝王所因而利道之者也；後乃備舉山川境壤之支湊，以及人民謠俗、性質、作業，則以漢興，海內為一，而商賈無所不通，非此不足以徵萬貨之情，審則宜類而施政教也。</p>
+        <p>兩舉庶民經業之凡，而中別之。前所稱農田樹畜，乃本富也；後所稱販鬻僦貸，而末富也。上能富國者，太公之教誨，管仲之整齊是也；下能富家者，朱公、子贛、白圭是也。計然則雜用富家之術以施於國，故別言之，而不得儕於太公、管仲也。然自白圭以上，皆各有方略，故以「能試所長」許之。猗頓以下，則商賈之事耳，故別言之，而不得儕於朱公、子贛、白圭也。</p>
+        <p>是篇大義與〈平準〉相表裡，而前後措注，又各有所當如此，是之謂「言有序」，所以至賾而不可惡也。</p>
+        <p>夫紀事之文成體者，莫如左氏，又其後，則昌黎韓子，然其義法，皆顯然可尋，惟太史公〈禮〉、〈樂〉、〈封禪〉三書及〈貨殖〉、〈儒林傳〉，則於其言之亂雜而無章者寓焉。豈所謂「定、哀之際多微辭」者邪？</p>
+      </div>
+      <div class="trans"><div class="col-h">白話譯文</div>
+        <p>本篇側重論「法」，即「言有序」之旨。方苞認為《史記・貨殖列傳》看似記事繁雜，實則秩然有序。</p>
+        <p>司馬遷能從材料的性質出發取材行文：前舉地物為衣食之源，後備舉山川境壤、人民謠俗，以見漢興海內為一、商賈無所不通之勢，故詳略適宜。</p>
+        <p>農田樹畜為「本富」，販鬻貸為「末富」；太公、管仲能富國，朱公、子贛、白圭能富家，層次井然，措注得當。</p>
+        <p>全篇大義與〈平準書〉相表裡，前後安排各得其當，此即「言有序」，故雖至賾而不可惡。</p>
+        <p>記事之文以《左傳》、韓愈為成體，義法顯然可尋；而太史公獨於「亂雜無章」之處寓其義法，或即「定、哀之際多微辭」之意。</p>
+      </div>
+    </div>
+    <div class="acc"><button class="acc-head" type="button">【文本解讀】<span class="ar">▾</span></button>
+      <div class="acc-body"><div class="in">該篇是方苞闡明「義法」問題的重要文章。首先提出「義」為「言有物」、「法」為「言有序」，「義」為經、「法」為緯，統一成文。下文雖言「義法」，具體所指則偏於「法」。方苞認為《史記・貨殖列傳》看似記事繁雜，實則秩然有序，主因司馬遷能從材料性質出發取材行文，故詳略適宜、措注得當。</div></div>
+    </div>
+  </div>
+
+  <div class="tpanel" data-t="t2">
+    <div class="t-tools"><span class="switch on" id="sw2"><span class="tr"></span>顯示白話對照</span></div>
+    <div class="duo-grid" id="grid2">
+      <div class="orig"><div class="col-h">原文</div>
+        <p>昔之人貴極富溢，則往往為別館以自娛，窮極土木之工，而無所愛惜。既成，則不得久居其中，偶一至焉而已，有終身不得至者焉。而人之得久居其中者，力又不足以為之。夫賢公卿勤勞王事，固將不暇於此；而卑庸者類欲以此震耀其鄉里之愚。</p>
+        <p>臨朐相國馮公，其在廷時無可訾，亦無可稱。而有園在都城之東南隅。其廣三十畝，無雜樹，隨地勢之高下，盡植以柳，而榜其堂曰「萬柳之堂」。短牆之外，騎行者可望而見其中。徑曲而深，因其窪以為池，而累其土以成山；池旁皆蒹葭，雲水蕭疏可愛。</p>
+        <p>雍正之初，予始至京師，則好游者咸為予言此地之勝。一至，猶稍有亭榭。再至，則向之飛梁架於水上者，今欹臥於水中矣。三至，則凡其所植柳，斬焉無一株之存。</p>
+        <p>人世富貴之光榮，其與時升降，蓋略與此園等。然則士苟有以自得，宜其不外慕乎富貴。彼身在富貴之中者，方殷憂之不暇，又何必朘民之膏以為苑囿也哉！</p>
+      </div>
+      <div class="trans"><div class="col-h">白話譯文</div>
+        <p>過去的人富貴到了極點，就往往建造別墅供自己享樂，竭盡建築藝術的精巧而不惜一切代價。等到建成，卻不能常住，只是偶然一去，甚至終身沒有去過。而能夠常住的人，卻又無力建造。賢能的公卿忙於國家事務，根本無暇顧及；只有庸俗貪卑的人，才想用豪華別墅向家鄉無知的人誇耀。</p>
+        <p>康熙朝宰相、臨朐人馮，在朝任職時既無可指責，也無可稱讚，只是在城的東南角有座園林。園廣三十畝，沒有雜樹，隨地勢高低全種柳樹，題堂名為「萬柳之堂」。矮牆外騎馬經過的人可以望見。園中小路曲折通幽，利用低窪建成池塘，堆土造成假山；池邊長滿蘆，雲水疏落，可愛極了。</p>
+        <p>雍正初年我剛到北京，愛遊玩的朋友都對我介紹萬柳堂的勝景。第一次去，還有些亭臺水閣；第二次去，以前凌空架在水上的高橋，已斜臥水中；第三次去，園中所種柳樹，像被斬過一樣，一棵不存。</p>
+        <p>人世間富貴的榮耀，隨著時間有升有降，大概也和這園子一樣。那麼士大夫若能自己有所領悟，就不該羨慕富貴這身外之物。已經置身富貴之中的人，正應當深憂也來不及，又怎能搜刮百姓脂膏來建造園林呢！</p>
+      </div>
+    </div>
+    <div class="acc"><button class="acc-head" type="button">【文本解讀】<span class="ar">▾</span></button>
+      <div class="acc-body"><div class="in"><ul>
+        <li>馮溥仿效元代宰相廉希憲園林題名，將自己園林題為「萬柳堂」；其政績平庸，但因熱心為新王朝網羅人材而得康熙寵愛。</li>
+        <li>馮溥勢衰後萬柳堂易主，雍正年間日漸廢敗。劉大櫆三往遊覽，面對破敗景象，感慨萬千而作此記。</li>
+        <li>本篇一變俗套：不按時間先後依次敘述三遊，而將三次遊歷所見集中於一段、並置於最後，筆法獨到。</li>
+      </ul></div></div>
+    </div>
+  </div>
+
+  <div class="tpanel" data-t="t3">
+    <div class="t-tools"><span class="switch on" id="sw3"><span class="tr"></span>顯示白話對照</span></div>
+    <div class="duo-grid" id="grid3">
+      <div class="orig"><div class="col-h">原文</div>
+        <p>曩者鼐在京師，歙程吏部、歷城周編修語曰：「為文章者，有所法而後能，有所變而後大。維盛清治邁逾前古千百，獨士能為古文者未廣。昔有方侍郎，今有劉先生，天下文章，其出於桐城乎？」鼐曰：「夫黃、舒之間，天下奇山水也。鬱千餘年，一方無數十人名於史傳者。獨浮屠之俊雄，自梁、陳以來，不出二三百里，肩背交而聲相應和也。其徒遍天下，奉之為宗。豈山川奇傑之氣有蘊而屬之邪？夫釋氏衰歇，則儒士興，今殆其時矣！」既應二君，其後嘗為鄉人道焉。</p>
+        <p>鼐又聞諸長者曰：「康熙間，方侍郎名聞海外。劉先生一日以布衣走京師，上其文侍郎。侍郎告人曰：『如方某何足算邪？邑子劉生，乃國士爾！』聞者始駭不信，久乃漸知先生。」今侍郎沒，而先生之文果益貴。然先生窮居江上，無侍郎之名位交遊，不足掖起世之英少。獨閉戶伏首几案，年八十矣，聰明猶強，著述不輟，有衛武《懿》詩之志，斯世之異人也已。</p>
+        <p>鼐之幼也，嘗侍先生，奇其狀貌言笑，退輒仿效以為戲。及長，受經學於伯父編修君，學文於先生。遊宦三十年而歸，伯父前卒，不得復見。往日父執往來者皆盡，而猶得數見先生於樅陽。先生亦喜其來，足疾未平，扶曳出與論文，每窮半夜。</p>
+        <p>今五月望，邑人以先生生日為之壽。鼐適在揚州，思念先生，書是以寄先生，又使鄉之後進者聞而勸焉。</p>
+      </div>
+      <div class="trans"><div class="col-h">白話譯文</div>
+        <p>過去我在京城，歙縣程吏部、歷城周編修對我說：「寫文章的人，先有所法然後能，有所變然後大。清朝治世超越前古，唯独能作古文之士不廣。過去有方侍郎，現在有劉先生，天下的文章，大概都出自桐城吧？」我回答：「黃、舒之間是天下奇山水，鬱積千餘年，一方沒有數十人名於史傳，唯独佛教俊雄自梁陳以來層出不窮。或許山川奇傑之氣有所蘊屬吧！釋氏衰歇，則儒士興起，現在大概就是時候了！」</p>
+        <p>我又聽長者說：康熙年間方侍郎名聞海外。劉先生一日以布衣身份到京師，呈上文章。侍郎對人說：「像我方某算什麼？同鄉劉生，才是國士啊！」聽的人起初驚訝不信，久了才漸漸了解先生。如今侍郎已逝，先生文章果然更貴。但先生窮居江上，沒有侍郎的名位交遊，不足以獎掖後進，只是閉門伏案，年已八十仍聰明強健、著述不輟，有衛武《懿》詩之志，真是當世異人。</p>
+        <p>我小時候曾侍奉先生，覺得他的狀貌言笑奇特，回家就模仿以為遊戲。長大後從伯父學經學，從先生學文章。出外做官三十年回來，伯父已逝，往日父輩交遊皆盡，仍能在樅陽數次見到先生。先生也高興我來，腳疾未愈仍扶曳出來與我論文，每每談到半夜。</p>
+        <p>如今五月十五，鄉人因先生生日為他祝壽。我恰在揚州，思念先生，寫下這些寄給先生，也讓家鄉後輩聽了能自我勉勵。</p>
+      </div>
+    </div>
+    <div class="acc"><button class="acc-head" type="button">【文本解讀】<span class="ar">▾</span></button>
+      <div class="acc-body"><div class="in"><ul>
+        <li>此文是首次高張桐城文派旗幟的作品，「天下文章，其出桐城乎」一語由此而來。</li>
+        <li>第一部分總寫，借程、周之口正式提出桐城文派構想，避免自我標榜之嫌。</li>
+        <li>第二部分借傳聞寫方、劉師承關係，指出桐城宗祖間最初的承繼軌跡。</li>
+        <li>第三部分敘自己從劉大櫆學文的過程，表達得益之多、相交之深。</li>
+        <li>行文得體：借一副筆墨說兩層意思，委婉含蓄，既有開宗立派的自豪，又不失晚輩的謙躬。</li>
+      </ul></div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ============ 配對 ============ -->
+<section id="game">
+  <div class="sec-head reveal"><span class="seal">陸</span><h2>配對挑戰</h2></div>
+  <p class="sec-sub reveal">先點擊左側人物，再點擊右側與之相關的詞條。每人對應三個詞條，全部配對成功即過關！</p>
+  <div class="game-grid reveal">
+    <div class="match-persons" id="mpBox">
+      <button class="mp" data-p="fang" type="button"><span class="dot"></span><span class="nm">方苞</span><span class="cnt">0 / 3</span></button>
+      <button class="mp" data-p="liu" type="button"><span class="dot"></span><span class="nm">劉大櫆</span><span class="cnt">0 / 3</span></button>
+      <button class="mp" data-p="yao" type="button"><span class="dot"></span><span class="nm">姚鼐</span><span class="cnt">0 / 3</span></button>
+    </div>
+    <div>
+      <div class="match-terms" id="mtBox"></div>
+      <div class="game-status" id="matchStatus">已配對 <b>0</b> / 9・失誤 <b>0</b> 次</div>
+      <button class="btn btn-ghost" id="matchReset" style="margin-top:14px;padding:8px 20px;font-size:.85rem">重新開始</button>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ============ 測驗 ============ -->
+<section id="quiz">
+  <div class="sec-head reveal"><span class="seal">柒</span><h2>學習測驗</h2></div>
+  <p class="sec-sub reveal">共十題，答完即顯示解說與成績。祝你旗開得勝！</p>
+  <div class="quiz-box reveal" id="quizBox"></div>
+</section>
+
+<footer>
+  <span class="seal">桐城</span>
+  <div>桐城三祖：方苞・劉大櫆・姚鼐｜互動式學習網頁</div>
+  <div style="margin-top:8px;opacity:.7">資料來源：《桐城三祖：方苞、劉大櫆、姚鼐》講義・畫像為清代祖宗像／官服像風格 AI 繪製</div>
+</footer>
+<button id="toTop" title="回到頂部">▲</button>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+
+/* nav scrollspy */
+const secs=['overview','timeline','masters','theory','texts','game','quiz'].map(id=>document.getElementById(id));
+const navA=$$('.nav-links a');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY+140;let cur='';
+  secs.forEach(s=>{if(s.offsetTop<=y)cur=s.id;});
+  navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  $('#toTop').classList.toggle('show',window.scrollY>600);
+},{passive:true});
+$('#toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* master tabs */
+$$('.mtab').forEach(b=>b.addEventListener('click',()=>{
+  $$('.mtab').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  $$('.mpanel').forEach(p=>p.classList.toggle('active',p.dataset.m===b.dataset.m));
+}));
+
+/* text tabs */
+$$('.ttab').forEach(b=>b.addEventListener('click',()=>{
+  $$('.ttab').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  $$('.tpanel').forEach(p=>p.classList.toggle('active',p.dataset.t===b.dataset.t));
+}));
+
+/* translation switches */
+[['sw1','grid1'],['sw2','grid2'],['sw3','grid3']].forEach(([sw,gr])=>{
+  const s=$('#'+sw),g=$('#'+gr);
+  s.addEventListener('click',()=>{
+    s.classList.toggle('on');
+    const on=s.classList.contains('on');
+    g.classList.toggle('hide-trans',!on);
+    g.classList.toggle('no-trans',!on);
+  });
+});
+
+/* accordions */
+$$('.acc-head').forEach(h=>h.addEventListener('click',()=>h.parentElement.classList.toggle('open')));
+
+/* exp cards */
+$$('.exp-card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
+
+/* ladder */
+$$('.lad-btn').forEach(b=>b.addEventListener('click',()=>{
+  $$('.lad-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  $$('.lad-detail').forEach(d=>d.classList.toggle('show',d.dataset.l===b.dataset.l));
+}));
+
+/* twelve gui */
+const TW=[['奇','奇：新穎奇特，不落平庸。'],['高','高：格調高邁，氣宇軒昂。'],['大','大：格局宏大，包舉宇內。'],['遠','遠：餘韻悠遠，言外有神。'],['簡','簡：簡潔精鍊，筆無贅語。'],['疏','疏：疏朗通脫，從容不迫。'],['變','變：變化隨宜，不主一道。'],['瘦','瘦：瘦勁挺拔，筆力剛健。'],['華','華：華美文采，藻飾得宜。'],['參差','參差：錯落變化，自然成節奏。'],['去陳言','去陳言：戛戛獨造，務去陳言。'],['品藻','品藻：銓品人物，辭采雅潔。']];
+const twBox=$('#twelve');
+TW.forEach(([t,n])=>{
+  const b=document.createElement('button');b.type='button';b.className='tw';b.textContent=t;
+  b.addEventListener('click',()=>{
+    $$('.tw',twBox).forEach(x=>x.classList.remove('active'));b.classList.add('active');
+    $('#twelveNote').textContent=n;
+  });
+  twBox.appendChild(b);
+});
+
+/* eight flip cards */
+const EIGHT=[['神','精'],['理','精'],['氣','精'],['味','精'],['格','粗'],['律','粗'],['聲','粗'],['色','粗']];
+const eBox=$('#eight');
+EIGHT.forEach(([ch,kind])=>{
+  const f=document.createElement('div');f.className='flip';
+  f.innerHTML=`<div class="flip-in">
+    <div class="face f"><span class="ch">${ch}</span><span class="tag">點擊翻面</span></div>
+    <div class="face b ${kind==='精'?'jing':'cu'}">文之${kind}者<br>「${ch}」</div></div>`;
+  f.addEventListener('click',()=>f.classList.toggle('flipped'));
+  eBox.appendChild(f);
+});
+
+/* ============ matching game ============ */
+const MATCH={fang:['義法說','南山集案','言有物・言有序'],liu:['神氣說','論文偶記','十二貴'],yao:['三二八訣','古文辭類纂','陰陽剛柔']};
+let selP=null,matched=0,wrong=0;
+const mtBox=$('#mtBox'),mpBox=$('#mpBox');
+function shuffle(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);}
+function renderMatch(){
+  selP=null;matched=0;wrong=0;
+  $$('.mp',mpBox).forEach(p=>{p.classList.remove('sel','done');$('.cnt',p).textContent='0 / 3';});
+  mtBox.innerHTML='';
+  const all=shuffle(Object.entries(MATCH).flatMap(([p,arr])=>arr.map(t=>({p,t}))));
+  all.forEach(({p,t})=>{
+    const b=document.createElement('button');b.type='button';b.className='mt';b.textContent=t;b.dataset.p=p;
+    b.addEventListener('click',()=>{
+      if(b.classList.contains('m-fang')||b.classList.contains('m-liu')||b.classList.contains('m-yao'))return;
+      if(!selP){b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),450);return;}
+      if(b.dataset.p===selP){
+        b.classList.add('m-'+selP);matched++;
+        const mp=$('.mp[data-p="'+selP+'"]',mpBox);
+        const c=matchedCount(selP);$('.cnt',mp).textContent=c+' / 3';
+        if(c===3)mp.classList.add('done');
+        updateStatus();
+        if(matched===9)$('#matchStatus').innerHTML='🎉 全部配對成功！失誤 <b>'+wrong+'</b> 次，太厲害了！';
+      }else{
+        wrong++;b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),450);updateStatus();
+      }
+    });
+    mtBox.appendChild(b);
+  });
+  updateStatus();
+}
+function matchedCount(p){return $$('.mt.m-'+p,mtBox).length;}
+function updateStatus(){if(matched<9)$('#matchStatus').innerHTML='已配對 <b>'+matched+'</b> / 9・失誤 <b>'+wrong+'</b> 次'+(selP?'（已選：'+$('.mp[data-p="'+selP+'"] .nm',mpBox).textContent+'）':'（請先選擇人物）');}
+$$('.mp',mpBox).forEach(p=>p.addEventListener('click',()=>{
+  if(p.classList.contains('done'))return;
+  $$('.mp',mpBox).forEach(x=>x.classList.remove('sel'));
+  selP=p.dataset.p;p.classList.add('sel');updateStatus();
+}));
+$('#matchReset').addEventListener('click',renderMatch);
+renderMatch();
+
+/* ============ quiz ============ */
+const QUIZ=[
+{q:'被尊為桐城派「創始人」的是？',o:['戴名世','方苞','劉大櫆','姚鼐'],a:1,e:'方苞導乎先路，首次提出「義法」說，為桐城派理論體系的基礎。'},
+{q:'「昔有方侍郎，今有劉先生，天下文章，其出於桐城乎？」此語出自何人之口？',o:['姚鼐','曾國藩','程晉芳、周永年','張廷玉'],a:2,e:'程晉芳、周永年戲謂姚鼐，從此學者輾轉傳述，號曰「桐城派」。'},
+{q:'方苞「義法說」中，「義」指的是？',o:['言有序','言有物','言有志','言有氣'],a:1,e:'「義」即《易》之所謂「言有物」，指文章的思想內容；「法」為「言有序」。'},
+{q:'方苞因替哪本書作序而牽連入獄兩年？',o:['《南山集》','《禮記析疑》','《古文辭類纂》','《論文偶記》'],a:0,e:'康熙五十年戴名世《南山集》案發，方苞因作序牽連入獄，獄中仍堅持著作。'},
+{q:'劉大櫆繼承並昇華「義法說」的著作是？',o:['《古文辭類纂》','《述庵文鈔》','《論文偶記》','《喪禮或問》'],a:2,e:'〈論文偶記〉採語錄體，共三十二條，提出神氣、音節、字句之論。'},
+{q:'劉大櫆認為「行文之道」應以何為主？',o:['神為主，氣輔之','氣為主，神輔之','義為主，法輔之','理為主，辭輔之'],a:0,e:'「行文之道，神為主，氣輔之。」氣隨神轉，神為氣之主。'},
+{q:'姚鼐所論學問「三端」不包括下列何者？',o:['義理','考證','文章','音節'],a:3,e:'三端為義理、考證、文章；善用之則皆足以相濟。'},
+{q:'姚鼐從審美風格上將文章歸為哪兩類？',o:['奇與正','陽剛與陰柔','簡與繁','雅與俗'],a:1,e:'文章之原本乎天地，陰陽剛柔并行而不容偏廢。'},
+{q:'《古文辭類纂》將文章分為幾種文類？',o:['八類','十類','十三類','十六類'],a:2,e:'分論辯、序跋、奏議、書說、贈序、詔令、傳狀、碑誌、雜記、箴銘、頌讚、辭賦、哀祭十三類。'},
+{q:'桐城派「風靡一時」的興盛時期與何人有關？',o:['曾國藩','李光地','戴名世','歸有光'],a:0,e:'曾國藩出，桐城派風靡一時，並別開湘鄉派。'}
+];
+let qi=0,qs=0,answered=false;
+const qBox=$('#quizBox');
+function renderQ(){
+  answered=false;
+  const q=QUIZ[qi];
+  qBox.innerHTML=`<div class="q-top"><span>第 ${qi+1} / ${QUIZ.length} 題</span><span>得分：${qs}</span></div>
+  <div class="q-bar"><i style="width:${(qi/QUIZ.length)*100}%"></i></div>
+  <div class="q-text">${q.q}</div>
+  <div class="q-opts">${q.o.map((o,i)=>`<button class="q-opt" data-i="${i}" type="button"><span class="k">${'ABCD'[i]}</span>${o}</button>`).join('')}</div>
+  <div class="q-exp" id="qExp"></div>
+  <button class="btn btn-red q-next" id="qNext" type="button">${qi===QUIZ.length-1?'查看成績':'下一題 ➤'}</button>`;
+  $$('.q-opt',qBox).forEach(b=>b.addEventListener('click',()=>{
+    if(answered)return;answered=true;
+    const i=+b.dataset.i;
+    if(i===q.a){b.classList.add('correct');qs++;}
+    else{b.classList.add('wrong');$$('.q-opt',qBox)[q.a].classList.add('correct');}
+    $$('.q-opt',qBox).forEach(x=>x.disabled=true);
+    const ex=$('#qExp');ex.innerHTML='💡 '+q.e;ex.classList.add('show');
+    $('#qNext').classList.add('show');
+  }));
+  $('#qNext').addEventListener('click',()=>{
+    if(qi<QUIZ.length-1){qi++;renderQ();}else{renderResult();}
+  });
+}
+function renderResult(){
+  const pct=qs/QUIZ.length;
+  const msg=pct===1?'完美！你已盡得桐城文脈之精蘊！':pct>=0.8?'優秀！義法神氣，皆已了然於胸。':pct>=0.6?'不錯！再讀一遍選文，定能更上層樓。':'尚可加油，回到「三祖」與「理論」區複習一下吧！';
+  qBox.innerHTML=`<div class="q-result"><div class="score">${qs}<span style="font-size:.4em;color:var(--ink2)"> / ${QUIZ.length}</span></div>
+  <div class="msg kai">${msg}</div>
+  <button class="btn btn-red" id="qRestart" type="button">再挑戰一次</button></div>`;
+  $('#qRestart').addEventListener('click',()=>{qi=0;qs=0;renderQ();});
+}
+renderQ();
+</script>
+</body>
+</html>
